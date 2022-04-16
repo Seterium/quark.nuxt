@@ -68,7 +68,7 @@
     "source.fixAll.stylelint": true
   },
   "path-autocomplete.pathMappings": {
-    "@": "${folder}"
+    "@": "${folder}/src"
   },
   "eslint.options": {
     "overrideConfigFile": ".eslintrc.js"
