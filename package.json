@@ -14,8 +14,7 @@
     "lint:prettier": "prettier --check ./src",
     "lint:fix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
     "new": "plop",
-    "prepare": "husky install",
-    "postinstall": "copy .env.example .env"
+    "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.19.3",
