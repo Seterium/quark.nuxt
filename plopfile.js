@@ -17,8 +17,8 @@ module.exports = function (plop) {
     actions: () => [
       {
         type: 'add',
-        templateFile: './plop/page/page.vue.hbs',
-        path: './pages/{{ PATH }}.vue',
+        templateFile: './.plop/page/page.vue.hbs',
+        path: './src/pages/{{ PATH }}.vue',
       },
     ],
   })
@@ -41,8 +41,8 @@ module.exports = function (plop) {
     actions: () => [
       {
         type: 'add',
-        templateFile: './plop/component/component.vue.hbs',
-        path: './components/{{ PATH }}{{ NAME }}.vue',
+        templateFile: './.plop/component/component.vue.hbs',
+        path: './src/components/{{ PATH }}{{ NAME }}.vue',
       },
     ],
   })
