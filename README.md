@@ -80,7 +80,7 @@
     "html",
     "javascript"
   ],
-  "stylelint.configFile": "stylelint.config.js",
+  "stylelint.configFile": ".stylelintrc",
   "stylelint.validate": [
     "css",
     "scss",
