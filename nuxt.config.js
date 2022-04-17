@@ -25,6 +25,7 @@ export default {
     '@nuxtjs/style-resource',
     '@nuxtjs/svg',
     'nuxt-windicss',
+    '@unocss/nuxt',
   ],
 
   styleResources: {
