@@ -14,6 +14,7 @@
     "lint:prettier": "prettier --check ./src",
     "lint:fix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
     "ace": "ace",
+    "fcheck": "fcheck",
     "new": "plop",
     "prepare": "husky install"
   },
@@ -47,6 +48,7 @@
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "prettier-plugin-tailwindcss": "^0.1.8",
+    "quark.checklist": "https://github.com/Seterium/quark.checklist",
     "quark.tools": "https://github.com/Seterium/quark.tools",
     "sass": "^1.50.0",
     "sass-loader": "10",
