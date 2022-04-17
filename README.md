@@ -34,22 +34,32 @@
   yarn ace
 ```
 
-### Общие советы
-- Оптимизировать JPG/PNG картинки с помощью оптимизатора
-- Если PNG-изображении нет прозрачности и используется широкая палитра цветов - преобразовывать в JPG для уменьшения объема
-- Максимально использовать `<picture>` для того, чтобы браузер грузил картинку оптимального размера
-- Максимально использовать современные форматы `webp` и `avif` для изображений, но вставлять их **ТОЛЬКО** с помощью `<picture>`
-- Использовать в шрифты `woff2` и `woff`, в случае отсутствия таковых - преобразовать исходный шрифт в них с помощью конвертера
+### Developer notes
+- **Картинки**
+  - Оптимизировать JPG/PNG с помощью `yarn ace optimize`
+  - Генерировать оптимальные размеры под популярные разрешения с помощью `yarn ace generate <image> --sizes [...sizes]`
+  - Конвертировать в современные форматы `webp` и `avif` с помощью `yarn ace generate <image> --formats [...formats]`
+  - Для форматов `webp` и `avif` **обязательно** использовать `<picture>` для обеспечения поддержки старых браузеров
+- **Шрифты**
+  - Использовать шрифты в форматах `woff2`, `woff` и `ttf` (подключать все 3, именно в таком порядке). В случае отсутствия какого-либо формата - использовать конвертер (ссылка есть ниже)
+  - Добавлять `<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>` для каждого отдельного шрифта в формате `woff2`
+- **Выход "в прод"**
+  - Провести проверку по [<img src="http://www.google.com/s2/favicons?domain=https://frontendchecklist.io/" width="12" height="12"/> чеклисту](https://frontendchecklist.io/)
+  - Запустить проветку Lighthouse в браузере для выявления критических проблем производительности
+- **Общие советы**
+  - Не тащить в проект лишние зависимости, особенно имеющие большой вес (если только функционал этой библиотеки критически необходим)
+  - Максимально пользоваться синтаксисом Atomic CSS (в нашем случае - WindiCSS) для уменьшения количества стилей
+  - Все ссылки на внешние ресурсы, открываемые в новой вкладке **обязательно** должны иметь атрибут `rel="noopener noreferrer"`
 ### Полезные ссылки
 - [<img src="http://www.google.com/s2/favicons?domain=https://nuxtjs.org/" width="12" height="12"/> Документация Nuxt](https://nuxtjs.org/)
-- [<img src="https://raw.githubusercontent.com/nuxt-community/awesome-nuxt/master/media/awesome-nuxt-logo.svg" width="12" height="12"/> Библиотека Awesome Nuxt](https://github.com/nuxt-community/awesome-nuxt)
+  - [<img src="https://raw.githubusercontent.com/nuxt-community/awesome-nuxt/master/media/awesome-nuxt-logo.svg" width="12" height="12"/> Awesome Nuxt](https://github.com/nuxt-community/awesome-nuxt)
 - [<img src="http://www.google.com/s2/favicons?domain=https://windicss.org/" width="12" height="12"/> Документация WindiCSS](https://windicss.org)
-- [<img src="http://www.google.com/s2/favicons?domain=https://jakearchibald.github.io/svgomg/" width="12" height="12"/> Оптимизация SVG](https://jakearchibald.github.io/svgomg/)
+  - [<img src="http://www.google.com/s2/favicons?domain=https://tailwindcomponents.com" width="12" height="12"/> Компоненты WindiCSS](https://tailwindcomponents.com)
+- [<img src="http://www.google.com/s2/favicons?domain=https://bundlephobia.com/" width="12" height="12"/> Bundlephobia - проверка веса зависимости](https://bundlephobia.com/)
 - [<img src="http://www.google.com/s2/favicons?domain=https://imagecompressor.com/" width="12" height="12"/> Оптимизация PNG/JPG](https://imagecompressor.com/)
-- [<img src="http://www.google.com/s2/favicons?domain=https://onlinefontconverter.com/" width="12" height="12"/> Конвертер шрифтов](https://onlinefontconverter.com/)
+- [<img src="http://www.google.com/s2/favicons?domain=https://jakearchibald.github.io/svgomg/" width="12" height="12"/> Оптимизация SVG](https://jakearchibald.github.io/svgomg/)
 - [<img src="http://www.google.com/s2/favicons?domain=https://github.com" width="12" height="12"/> Про вставку SVG в компоненты](https://github.com/nuxt-community/svg-module)
-- [<img src="http://www.google.com/s2/favicons?domain=https://fonts.google.com/icons" width="12" height="12"/> Иконки Material design](https://fonts.google.com/icons)
-
+- [<img src="http://www.google.com/s2/favicons?domain=https://onlinefontconverter.com/" width="12" height="12"/> Конвертер шрифтов](https://onlinefontconverter.com/)
 ### Рекомендуемые расширения для VS Code
 - [<img src="http://www.google.com/s2/favicons?domain=https://vuejs.org/" width="12" height="12"/> Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 - [<img src="http://www.google.com/s2/favicons?domain=https://sass-lang.com/" width="12" height="12"/> Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented)
