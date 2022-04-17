@@ -10,7 +10,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/images/favicons/x32.png' },
+      { rel: 'apple-touch-icon', href: '/images/favicons/x180.png' },
+    ],
   },
 
   css: ['./assets/styles/index.scss'],
@@ -22,7 +26,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/style-resource',
+    '@nuxtjs/style-resources',
     '@nuxtjs/svg',
     'nuxt-windicss',
     '@unocss/nuxt',
