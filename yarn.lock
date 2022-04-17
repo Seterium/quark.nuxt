@@ -9818,7 +9818,7 @@ qs@^6.9.4:
 
 "quark.tools@https://github.com/Seterium/quark.tools":
   version "1.0.0"
-  resolved "https://github.com/Seterium/quark.tools#289c0b773bc1c33b66206cdee9a0576b837702d8"
+  resolved "https://github.com/Seterium/quark.tools#c1b1e7b89a342fc6db9dd94ca1149b0b46cb83e9"
   dependencies:
     commander "^9.2.0"
     sharp "^0.30.3"
